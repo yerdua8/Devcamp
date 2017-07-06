@@ -1,11 +1,20 @@
 Rails.application.routes.draw do
-  resources :portfolios
-  resources :blogs
-  get 'pages/home'
+   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
+  resources :portfolios, except: [:show]
 
-  get 'pages/about'
+  get 'angular-items', to: 'portfolios#angular'
 
-  get 'pages/contact'
+  get 'portfolio/:id', to: 'portfolio#show'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-end
+  get 'about-me', to: 'pages#about'
+  get 'contact', to: 'pages#contact'
+
+  resources :blogs do
+    member do
+      get :toggle_status
+    end
+  end
+
+ 
+  root to:'pages#home'
+  end
