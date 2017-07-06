@@ -1,3 +1,8 @@
+3.times do |topic|
+  Topic.create!(
+    title: "Topic #{topic}"
+  )
+end
 
 10.times do |blog|
     Blog.create!(
