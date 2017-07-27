@@ -161,27 +161,21 @@ body {
   }
 }
 
-
 /*
  * Custom Styles
  */
- 
- .card-block {
-   color:black;
-   text-align:left;
-   
+
+.card-block {
+  color: black;
+  text-align: left;
 }
 
-.auth-links a{
-  
-color:black;
-
+.auth-links a {
+  color: black;
 }
 
 .register-text {
-  
- text-align:right;
- 
+  text-align: right;
 }
 
 .login > .card {
@@ -189,4 +183,8 @@ color:black;
   margin: 0 auto;
   float: none;
 }
- 
+
+.app-nav span {
+  margin-left: 15px;
+  margin-right: 15px;
+}
