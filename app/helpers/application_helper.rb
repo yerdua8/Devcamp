@@ -17,7 +17,7 @@ module ApplicationHelper
   end
 
   def copyright_generator
-    DevcampViewTool::Renderer.copyright 'Audrey Macfarlane', 'All rights reserved'
+    DevcampViewTool::Renderer.copyright 'Jordan Hudgens', 'All rights reserved'
   end
 
   def nav_items
@@ -42,6 +42,7 @@ module ApplicationHelper
         url: portfolios_path,
         title: 'Portfolio'
       },
+      
     ]
   end
 
@@ -57,6 +58,18 @@ module ApplicationHelper
 
   def active? path
     "active" if current_page? path
+  end
+
+  def alerts
+    alert = (flash[:alert] || flash[:error] || flash[:notice])
+
+    if alert
+      alert_generator alert
+    end
+  end
+
+  def alert_generator msg
+    js add_gritter(msg, title: "Audrey ", sticky: false)
   end
 
 end
