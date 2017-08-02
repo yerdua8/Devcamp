@@ -1,8 +1,8 @@
 user.create!(
   email:"yerdua8@gmail.com",
-  password:"admin8",
-  password_confirmation:"admin8",
-  name:"admin user",
+  password:"admin88",
+  password_confirmation:"admin88",
+  name:"Audrey",
   roles:"site_admin"
   )
   
